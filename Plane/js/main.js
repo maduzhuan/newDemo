@@ -63,6 +63,28 @@ window.onload = function() {
             // },3000)
         newPlane(level, pos);
     }
+    // 开启全屏
+    function launchFullscreen(element) {
+
+        if (element.requestFullscreen) {
+
+            element.requestFullscreen();
+
+        } else if (element.mozRequestFullScreen) {
+
+            element.mozRequestFullScreen();
+
+        } else if (element.webkitRequestFullscreen) {
+
+            element.webkitRequestFullscreen();
+
+        } else if (element.msRequestFullscreen) {
+
+            element.msRequestFullscreen();
+
+        }
+
+    }
     /** 
      * 创建我方飞机 newPlane
      * 生成飞机
