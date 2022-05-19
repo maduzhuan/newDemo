@@ -55,27 +55,6 @@ window.onload = function() {
         planeMap.style.display = 'block';
         score.innerText = 0;
         scoreNumber = 0;
-        (function launchFullscreen(element) {
-
-            if (element.requestFullscreen) {
-
-                element.requestFullscreen();
-
-            } else if (element.mozRequestFullScreen) {
-
-                element.mozRequestFullScreen();
-
-            } else if (element.webkitRequestFullscreen) {
-
-                element.webkitRequestFullscreen();
-
-            } else if (element.msRequestFullscreen) {
-
-                element.msRequestFullscreen();
-
-            }
-
-        })(document.documentElement);
         // 背景动画 传入游戏难度（不同的背景）
         MapBg(level)
             // score.innerText = 30000;
@@ -354,6 +333,5 @@ window.onload = function() {
         cancelAnimationFrame(map.bgM);
         end.style.display = 'none';
         start.style.display = 'block';
-        document.cancelFullScreen();
     }
 }
