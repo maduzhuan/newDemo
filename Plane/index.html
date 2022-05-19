@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
+    <link rel="stylesheet" href="css/plane.css" media="(max-width:820px)">
+    <style>
+        @media (min-width:821px) {
+            .map {
+                display: none;
+            }
+            .title {
+                display: block;
+                text-align: center;
+            }
+        }
+    </style>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="title">此设备不支持</div>
+    <div class="map">
+        <div class="start">
+            <h1>飞机大战 v1.0</h1>
+            <button>简单</button>
+            <button>普通</button>
+            <button>困难</button>
+            <button>地狱模式</button>
+        </div>
+        <div class="plane-map">
+            <span class="score">0</span>
+            <div class="biuall"></div>
+        </div>
+        <div class="end">
+            <p>
+                您的最终得分是：<span class="end-score"> 0 </span>
+            </p>
+            <p>
+                获得称号是: <span class="end-title">闪避侠</span>
+            </p>
+            <button>重新开始</button>
+        </div>
+    </div>
+</body>
+
+</html>

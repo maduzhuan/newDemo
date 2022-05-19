@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.title {
+    display: none;
+}
+
+.map {
+    position: relative;
+    width: 100vw;
+    height: 100%;
+    background-image: url(../imgs/bg_1.jpg);
+    background-size: 100% auto;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.map .start {
+    /* display: none; */
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 13.33333333vw;
+}
+
+.map .start h1 {
+    color: white;
+    margin-bottom: 26.66666667vw;
+}
+
+.map .start button {
+    display: block;
+    width: 26.66666667vw;
+    height: 10.66666667vw;
+    line-height: 10.66666667vw;
+    border: 0.26666667vw solid #ccc;
+    margin: 5.33333333vw auto;
+    font-size: 4.8vw;
+}
+
+.map .start button:last-child {
+    color: red;
+}
+
+.map .plane-map {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.map .plane-map span {
+    color: white;
+    font-size: 5.33333333vw;
+    padding: 1.33333333vw;
+}
+
+.map .plane-map .plane {
+    width: 18.66666667vw;
+    height: 18.66666667vw;
+    position: absolute;
+}
+
+.map .plane-map .enemy_big {
+    width: 27.73333333vw;
+    height: 21.33333333vw;
+    position: absolute;
+}
+
+.map .plane-map .enemy_small {
+    width: 14.4vw;
+    height: 10.66666667vw;
+    position: absolute;
+}
+
+.map .plane-map .biuall .fire {
+    position: absolute;
+    width: 8vw;
+    height: 8vw;
+}
+
+.map .end {
+    display: none;
+    color: white;
+    font-size: 4.8vw;
+    padding-top: 26.66666667vw;
+    text-align: center;
+}
+
+.map .end p {
+    margin-top: 26.66666667vw;
+}
+
+.map .end button {
+    display: block;
+    width: 26.66666667vw;
+    height: 10.66666667vw;
+    line-height: 10.66666667vw;
+    border: 0.26666667vw solid #ccc;
+    margin: 21.33333333vw auto;
+    font-size: 4.8vw;
+}
+
+.boom {
+    position: absolute;
+    animation: enemymove 0.8s 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes enemymove {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
