@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .xxoo-game {
+            display: flex;
+            flex-wrap: wrap;
+            width: 900px;
+            height: 900px;
+            background-color: #ccc;
+            justify-content: space-between;
+            border: 1px solid red;
+            margin: 0 auto;
+        }
+        
+        .xxoo-game div {
+            box-sizing: border-box;
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            font-size: 50px;
+            text-align: center;
+            line-height: 300px;
+        }
+        
+        body {
+            margin: 0;
+        }
+        
+        @media (max-width:800px) {
+            .xxoo-game {
+                display: flex;
+                flex-wrap: wrap;
+                width: 80vw;
+                height: 80vw;
+                background-color: #ccc;
+                justify-content: space-between;
+                border: 1px solid red;
+                margin: 0 auto;
+            }
+            .xxoo-game div {
+                box-sizing: border-box;
+                width: 26.66666667vw;
+                height: 26.66666667vw;
+                border: 1px solid red;
+                font-size: 13.33333333vw;
+                text-align: center;
+                line-height: 26.66666667vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="xxoo-game">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <script>
+        var map = document.querySelector(".xxoo-game");
+        var maps = map.querySelectorAll("div");
+        var info = ["X", "O"];
+        var n = 0;
+        for (var i = 0; i < maps.length; i++) {
+            maps[i].setAttribute("data-index", i);
+        }
+        map.onclick = function(ev) {
+            var index = ev.path[0].getAttribute("data-index");
+            if (maps[index].innerText.length == 0) {
+                maps[index].innerText = info[n % 2];
+                n++;
+                if (n >= 5) {
+                    setTimeout(() => {
+                        if (jugementStart()) {
+                            alert(`恭喜${maps[index].innerText}玩家胜利`);
+                            recommencer();
+                        }
+                        if (n >= 9) {
+                            alert(`不分伯仲！！！`);
+                            recommencer();
+                        }
+                    })
+                }
+
+                // console.log();
+            }
+        }
+
+        function jugementXXOO(...indexArr) {
+            var statut = false;
+            for (var i = 1; i < 3; i++) {
+                if (maps[indexArr[i] - 1].innerText != maps[indexArr[0] - 1].innerText || maps[indexArr[0] - 1].innerText - 0 == 0) {
+                    break;
+                } else if (i == 2) {
+                    statut = true;
+                }
+            }
+            return statut;
+        }
+
+        function jugementStart() {
+            var arr = ["123", "456", "789", "147", "258", "369", "159", "357"];
+            for (var i = 0; i < arr.length; i++) {
+                var [x, y, z] = arr[i]
+                var statut = jugementXXOO(x, y, z);
+                if (statut) {
+                    return statut;
+                    break;
+                }
+            }
+
+        }
+
+        function recommencer() {
+            for (var i = 0; i < maps.length; i++) {
+                maps[i].innerText = "";
+            }
+            n = 0;
+        }
+    </script>
+</body>
+
+</html>
